@@ -1,0 +1,9 @@
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img-size {
+    max-width: 320px;
+    max-height: 240px;
+}
