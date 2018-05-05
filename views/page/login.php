@@ -14,7 +14,7 @@
     <form class="form-group mt-2" method="post">
 
         <label class="my-2">Username</label>
-        <input type="text" class="col-lg-4 form-control" name="username">
+        <input type="text" class="col-lg-4 form-control" name="username" autofocus>
 
         <label class="my-2">Password</label>
         <input type="password" class="col-lg-4 form-control" name="password">

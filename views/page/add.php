@@ -15,10 +15,10 @@
 
         <div class="row justify-content-between">
             <div class="col-5">
-                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="102400000" />
+                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="102400000"/>
 
                 <label class="my-2">Username</label>
-                <input id="textUsername" type="text" class="form-control" name="username">
+                <input id="textUsername" type="text" class="form-control" name="username" autofocus>
 
                 <label class="my-2">Email</label>
                 <input id="textEmail" type="text" class="form-control" name="email">
