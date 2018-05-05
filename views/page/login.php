@@ -19,6 +19,7 @@
         <label class="my-2">Password</label>
         <input type="password" class="col-lg-4 form-control" name="password">
 
+        <div class="text-secondary my-2">Login "admin" password "123" or "vovchai", "12345"</div>
         <div class="text-danger mt-2"><?= $data['error'] ?></div>
 
         <input class="btn btn-primary mt-3" type="submit" value="Login" name="login_submit">
