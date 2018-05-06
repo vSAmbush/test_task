@@ -54,7 +54,9 @@ $tasks = $data['itemsPerPage'];
 
                 <div class="my-2 text-danger ml-3"><?= $data['error'] ?></div>
 
-                <button class="col-lg-1 btn btn-primary my-2 mx-3" type="submit" name="<?= $tasks[$i]->id ?>" value="<?= $tasks[$i]->id ?>">Save</button>
+                <div class="col-lg-3">
+                    <button class="btn btn-primary my-2 mx-1" type="submit" name="<?= $tasks[$i]->id ?>" value="<?= $tasks[$i]->id ?>">Save</button>
+                </div>
             </form><br>
         <?php endfor; ?>
     </div>
