@@ -1,11 +1,11 @@
 create schema tasks;
 use tasks;
 
-create table user(id int primary key auto_increment,
+create table `user`(id int primary key auto_increment,
  username varchar(40),
  email varchar(50),
  password_hash varchar(200),
- status bool)
+ status int)
 engine = InnoDB;
  
 
@@ -13,7 +13,7 @@ create table task (id int primary key auto_increment,
  id_user int,
  task_body varchar(300),
  img_path varchar(100),
- status bool,
+ status int,
  foreign key (id_user) references user (id))
 engine = InnoDB;
 
