@@ -44,7 +44,7 @@ class PageController extends Controller
 
             if($addForm->load($_POST, isset($_FILES['img_path']) ? $_FILES : null)) {
 
-                if(SQLHandler::saveTask(new Task($addForm->username, $addForm->email, $addForm->task_body, $addForm->img_path)))
+                if(SQLHandler::saveTask(new Task(null, $addForm->username, $addForm->email, $addForm->task_body, $addForm->img_path)))
                     $this->data['error'] = 'Success';
                 else
                     $this->data['error'] = 'Failed saving task';

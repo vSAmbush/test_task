@@ -18,7 +18,6 @@ class Task {
      * Task constructor.
      * @param $id
      * @param $username
-     * @param $name
      * @param $email
      * @param $task_body
      * @param null $img_path

@@ -81,6 +81,14 @@ class SQLHandler
         return isset($user) ? $user : false;
     }
 
+    /**
+     * Updates tasks
+     *
+     * @param $id
+     * @param $task_body
+     * @param $status
+     * @return bool
+     */
     public static function updateTask($id, $task_body, $status) {
 
         $count = self::$pdo->exec("update task set task_body = '".$task_body."', status = ".(($status) ? 1 : 0)." where id = ".$id);
