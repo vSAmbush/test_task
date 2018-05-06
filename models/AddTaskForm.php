@@ -6,7 +6,7 @@
  * Time: 21:00
  */
 
-class AddTaskForm
+class AddTaskForm extends Form
 {
     public $username;
 
@@ -15,8 +15,6 @@ class AddTaskForm
     public $task_body;
 
     public $img_path;
-
-    public $error = '';
 
     private $target_path = '/test_task/resources/img';
 
@@ -54,5 +52,15 @@ class AddTaskForm
         }
 
         return true;
+    }
+
+    /**
+     * Saving a new task
+     */
+    public function saveTask() {
+        if(SQLHandler::saveTask(new Task(null, $this->username, $this->email, $this->task_body, empty($this->img_path) ? null : $this->img_path)))
+            $this->error = 'Success';
+        else
+            $this->error = 'Failed saving task';
     }
 }

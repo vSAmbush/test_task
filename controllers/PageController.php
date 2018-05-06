@@ -44,14 +44,9 @@ class PageController extends Controller
 
             if($addForm->load($_POST, isset($_FILES['img_path']) ? $_FILES : null)) {
 
-                if(SQLHandler::saveTask(new Task(null, $addForm->username, $addForm->email, $addForm->task_body, $addForm->img_path)))
-                    $this->data['error'] = 'Success';
-                else
-                    $this->data['error'] = 'Failed saving task';
+                $addForm->saveTask();
             }
-            else {
-                $this->data['error'] = $addForm->error;
-            }
+            $this->data['error'] = $addForm->error;
         }
     }
 
@@ -86,14 +81,23 @@ class PageController extends Controller
                 if($adminForm->load($_POST, $_POST[$tasks[$i]->id])) {
                     $adminForm->save();
                     header('Refresh: 0');
-                } else
-                    $this->data['error'] = $adminForm->error;
+                }
+                $this->data['error'] = $adminForm->error;
             }
         }
     }
 
     public function actionRegister() {
+        $registerForm = new RegisterForm();
+        $this->data['error'] = '';
 
+        if(isset($_POST['register_submit'])) {
+
+            if($registerForm->load($_POST)) {
+                $registerForm->saveUser();
+            }
+            $this->data['error'] = $registerForm->error;
+        }
     }
 
     public function actionLogin() {

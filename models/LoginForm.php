@@ -6,13 +6,11 @@
  * Time: 14:13
  */
 
-class LoginForm
+class LoginForm extends Form
 {
     public $username;
 
     public $password;
-
-    public $error = '';
 
     /**
      * @param array $post - array $_POST

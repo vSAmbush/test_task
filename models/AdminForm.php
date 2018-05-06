@@ -6,7 +6,7 @@
  * Time: 20:31
  */
 
-class AdminForm
+class AdminForm extends Form
 {
     public $id;
 
@@ -14,14 +14,12 @@ class AdminForm
 
     public $status;
 
-    public $error = '';
-
     /**
      * @param array $post
      * @param $id
      * @return bool
      */
-    public function load($post = [], $id) {
+    public function load($post = [], $id = null) {
         $this->id = $id;
         $this->task_body = isset($post['task_body']) ? $post['task_body'] : null;
         $this->status = isset($post['status']) ? $post['status'] : false;

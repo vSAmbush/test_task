@@ -90,8 +90,20 @@ class SQLHandler
      * @return bool
      */
     public static function updateTask($id, $task_body, $status) {
-
         $count = self::$pdo->exec("update task set task_body = '".$task_body."', status = ".(($status) ? 1 : 0)." where id = ".$id);
+
+        return ($count > 0) ? true : false;
+    }
+
+    /**
+     * Saving user in database
+     *
+     * @param $user
+     * @return bool
+     */
+    public static function saveUser($user) {
+        $count = self::$pdo->exec("insert into user (username, email, password_hash, status) value ('".$user->getUsername()."', '"
+            .$user->getEmail()."', '".$user->getPassword()."', 1)");
 
         return ($count > 0) ? true : false;
     }
