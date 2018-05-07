@@ -18,6 +18,8 @@ class AddTaskForm extends Form
 
     private $target_path = '/test_task/resources/img';
 
+    private $extensions = ['png, jpg, jpeg, tiff, gif, bmp']; //add here access extensions for image files
+
     /**
      * @param array $post - array $_POST
      * @param null $file
@@ -29,6 +31,17 @@ class AddTaskForm extends Form
         $this->task_body = isset($post['task_body']) ? $post['task_body'] : null;
 
         if($file['img_path']['name']) {
+
+            //check for extension of file
+            $img_path_parts  = explode('.', $this->img_path);
+            if(!array_search($img_path_parts[count($img_path_parts) - 1], $this->extensions)) {
+                $this->error = 'The uploaded file must have next extensions: ';
+                foreach ($this->extensions as $extension) {
+                    $this->error .= $extension;
+                }
+                return false;
+            }
+
             $this->img_path = $this->target_path.'/'.basename($file['img_path']['name']);
             if(!move_uploaded_file($file['img_path']['tmp_name'], ROOT.DS.'resources'.DS.'img'.DS.basename($file['img_path']['name']))) {
                 $this->error = 'File is not uploaded';
