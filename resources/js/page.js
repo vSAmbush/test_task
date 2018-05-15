@@ -1,3 +1,8 @@
+/**
+ * Read uploaded file and import it to img tag
+ *
+ * @param input - Html file input
+ */
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -11,9 +16,11 @@ function readURL(input) {
     }
 }
 
-$(document).ready(function () {
+/**
+ * Add Task page jQuery handlers
+ */
+function addPageHandlers() {
 
-    //add page
     $("#inputFile").change(function () {
         readURL(this);
     });
@@ -34,13 +41,36 @@ $(document).ready(function () {
         $('#view_block').toggleClass('d-none', 1000);
     });
 
-    //admin page
-    $('#sel1').change(function () {
-        $('#submit_sel').click();
-    });
+}
 
-    //index page
+/**
+ * Admin page jQuery handlers
+ */
+function adminPageHandlers() {
+
     $('#sel1').change(function () {
         $('#submit_sel').click();
     });
+}
+
+/**
+ * Index page jQuery handlers
+ */
+function indexPageHandlers() {
+
+    $('#sel1').change(function () {
+        $('#submit_sel').click();
+    });
+}
+
+/**
+ * jQuery main function
+ */
+$(document).ready(function () {
+
+    addPageHandlers();
+
+    adminPageHandlers();
+
+    indexPageHandlers();
 });
