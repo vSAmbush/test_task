@@ -5,6 +5,9 @@
  * Date: 04.05.2018
  * Time: 16:33
  */
+
+use lib\App;
+
 $pagination = $data['pagination'];
 $tasks = $data['itemsPerPage'];
 ?>
@@ -59,13 +62,6 @@ $tasks = $data['itemsPerPage'];
                 </div>
             </form><br>
         <?php endfor; ?>
-    </div>
-
-    <script type="text/javascript">
-        $('#sel1').change(function () {
-            $('#submit_sel').click();
-        });
-    </script>
     </div>
 <?php else : ?>
     <h2 class="mt-4 text-center text-danger">YOU SHALL NOT PASS!</h2>

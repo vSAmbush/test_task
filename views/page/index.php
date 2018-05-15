@@ -50,8 +50,3 @@ $tasks = $data['itemsPerPage'];
         </div><br>
     <?php endfor; ?>
 </div>
-<script type="text/javascript">
-    $('#sel1').change(function () {
-        $('#submit_sel').click();
-    });
-</script>

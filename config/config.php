@@ -5,6 +5,7 @@
  * Date: 01.05.2018
  * Time: 19:00
  */
+use lib\Config;
 
 Config::set('site_name', 'MVC TASK');
 

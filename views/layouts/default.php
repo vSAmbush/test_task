@@ -5,6 +5,8 @@
  * Date: 02.05.2018
  * Time: 15:27
  */
+use \lib\App;
+use \lib\Config;
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,5 +68,7 @@
                 </div>
             </div>
         </footer>
+
+        <script type="text/javascript" src="../resources/js/page.js"></script>
     </body>
 </html>

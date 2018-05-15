@@ -5,6 +5,7 @@
  * Date: 01.05.2018
  * Time: 11:13
  */
+namespace lib;
 
 class Config
 {

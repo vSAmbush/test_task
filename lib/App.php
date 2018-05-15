@@ -5,6 +5,10 @@
  * Date: 02.05.2018
  * Time: 13:12
  */
+namespace lib;
+
+use Exception;
+use helpers\SQLHandler;
 
 class App
 {
@@ -27,7 +31,7 @@ class App
 
         self::logout();
 
-        $controller_name = self::$router->getController();
+        $controller_name = '\controllers\\'.self::$router->getController();
         $controller_action = self::$router->getMethodPrefix().self::$router->getAction();
 
         $controller_obj = new $controller_name();

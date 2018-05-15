@@ -5,6 +5,7 @@
  * Date: 03.05.2018
  * Time: 17:16
  */
+namespace helpers;
 
 class Button
 {

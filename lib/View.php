@@ -5,6 +5,9 @@
  * Date: 02.05.2018
  * Time: 14:22
  */
+namespace lib;
+
+use Exception;
 
 class View
 {

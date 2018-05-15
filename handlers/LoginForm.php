@@ -5,6 +5,10 @@
  * Date: 05.05.2018
  * Time: 14:13
  */
+namespace handlers;
+
+use helpers\SQLHandler;
+use lib\Form;
 
 class LoginForm extends Form
 {

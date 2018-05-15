@@ -5,6 +5,15 @@
  * Date: 02.05.2018
  * Time: 13:18
  */
+namespace controllers;
+
+use handlers\AddTaskForm;
+use handlers\AdminForm;
+use handlers\LoginForm;
+use handlers\RegisterForm;
+use helpers\Pagination;
+use lib\Controller;
+use helpers\TaskGroup;
 
 //to send variables to views, you need to fill data assoc array
 class PageController extends Controller

@@ -1,18 +1,11 @@
 <?php
 
 function autoload($className) {
-    $lib_path = ROOT.DS.'lib'.DS.$className.'.php';
-    $controller_path = ROOT.DS.'controllers'.DS.$className.'.php';
-    $model_path = ROOT.DS.'models'.DS.$className.'.php';
+    $className = str_replace('\\', DS, $className);
 
-    if (file_exists($lib_path)) {
-        require_once($lib_path);
-    } elseif (file_exists($controller_path)) {
-        require_once($controller_path);
-    } elseif (file_exists($model_path)) {
-        require_once($model_path);
-    } else {
-        throw new Exception('Failed to require class '.$className);
+    $path = ROOT.DS.$className.'.php';
+    if(file_exists($path)) {
+        require_once ($path);
     }
 }
 

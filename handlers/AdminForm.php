@@ -5,6 +5,10 @@
  * Date: 05.05.2018
  * Time: 20:31
  */
+namespace handlers;
+
+use helpers\SQLHandler;
+use lib\Form;
 
 class AdminForm extends Form
 {

@@ -1,5 +1,7 @@
 <?php
 
+use lib\App;
+
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__));
 define('VIEWS_PATH', ROOT.DS.'views');

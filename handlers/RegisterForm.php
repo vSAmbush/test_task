@@ -5,6 +5,11 @@
  * Date: 06.05.2018
  * Time: 15:47
  */
+namespace handlers;
+
+use helpers\SQLHandler;
+use lib\Form;
+use models\User;
 
 class RegisterForm extends Form
 {
