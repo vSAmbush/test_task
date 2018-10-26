@@ -18,6 +18,8 @@ class App
 
     public static $user;
 
+    public static $test_path;
+
     /**
      * Main function
      *
@@ -28,6 +30,9 @@ class App
         self::$router = new Router($uri);
         self::$sqlHandler = new SQLHandler();
         self::$user = isset($_COOKIE['loginUser']) ? unserialize($_COOKIE['loginUser']) : null;
+
+        //This variable need to different localhost and remote server
+        self::$test_path = (preg_match('/\btest_task\b/', $uri)) ? '/test_task' : '';
 
         self::logout();
 

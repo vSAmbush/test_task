@@ -21,7 +21,7 @@ class AddTaskForm extends Form
 
     public $img_path;
 
-    private $target_path = '/test_task/resources/img';
+    private $target_path = '/resources/img';
 
     private $extensions = ['png', 'jpg', 'jpeg', 'tiff', 'gif', 'bmp']; //add here access extensions for image files
 

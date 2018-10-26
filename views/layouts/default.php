@@ -11,7 +11,7 @@ use \lib\Config;
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="../favicon.png" type="image/png">
+        <link rel="shortcut icon" href="<?= App::$test_path?>/favicon.png" type="image/png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -24,7 +24,7 @@ use \lib\Config;
         <!-- Navigation -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary" data-toggle="affix">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-                <a class="navbar-brand" href="/test_task/page/index">TASKS</a>
+                <a class="navbar-brand" href="<?= App::$test_path?>/page/index">TASKS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,18 +32,18 @@ use \lib\Config;
                     <ul class="navbar-nav">
                         <?php if(App::$user && App::$user->getId() == 1) : ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="/test_task/page/admin">Admin</a>
+                                <a class="nav-link" href="<?= App::$test_path?>/page/admin">Admin</a>
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/test_task/page/add">Add Task</a>
+                            <a class="nav-link" href="<?= App::$test_path?>/page/add">Add Task</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/test_task/page/register">Sign Up</a>
+                            <a class="nav-link" href="<?= App::$test_path?>/page/register">Sign Up</a>
                         </li>
                         <li class="nav-item">
                             <?php if(!App::$user): ?>
-                                <a class="nav-link" href="/test_task/page/login">Login</a>
+                                <a class="nav-link" href="<?= App::$test_path?>/page/login">Login</a>
                             <?php else: ?>
                                 <a class="nav-link" href="?action=out">Logout (<?= App::$user->getUsername() ?>)</a>
                             <?php endif; ?>

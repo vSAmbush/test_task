@@ -100,6 +100,6 @@ class TaskGroup
     }
 
     public function sort() {
-        usort($this->tasks, ['TaskGroup', 'cmp']);
+        usort($this->tasks, ['helpers\TaskGroup', 'cmp']);
     }
 }

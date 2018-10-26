@@ -1,3 +1,4 @@
+drop schema if exists tasks;
 create schema tasks;
 use tasks;
 
@@ -23,8 +24,8 @@ insert into user (username, email, password_hash, status) values
 
 insert into task (id_user, task_body, img_path, status) values
  (1, 'Вымыть посуду', null, true),
- (2, 'Помыть полы', '/test_task/resources/img/disaudio.png', false),
+ (2, 'Помыть полы', '/resources/img/disaudio.png', false),
  (1, 'Выполнить тестовое задание', null, true),
  (2, 'Посмотреть сериал', null, false),
  (1, 'Выгулять собаку', null, false),
- (2, 'Собрать урожай и отвезти детей в школу', '/test_task/resources/img/Miner-Bob1.png', false);
+ (2, 'Собрать урожай и отвезти детей в школу', '/resources/img/Miner-Bob1.png', false);

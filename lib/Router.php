@@ -29,7 +29,7 @@ class Router
      */
     public function __construct($uri)
     {
-        $this->uri = urldecode(trim(str_replace('/test_task/', '', $uri)));
+        $this->uri = urldecode(trim(str_replace('/test_task/', '', $uri), '/'));
 
         //Get defaults
         $routes = Config::get('routes');
