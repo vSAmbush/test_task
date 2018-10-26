@@ -80,7 +80,7 @@ class App
             unset($_COOKIE['loginUser']);
             setcookie('loginUser', '', time() - 3600);
             self::$user = null;
-            header('Location: /test_task/page/index');
+            header('Location:'.self::$test_path.'/page/index');
         }
     }
 }
