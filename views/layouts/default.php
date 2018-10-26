@@ -24,7 +24,7 @@ use \lib\Config;
         <!-- Navigation -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary" data-toggle="affix">
             <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-                <a class="navbar-brand" href="<?= App::$test_path?>">TASKS</a>
+                <a class="navbar-brand" href="<?= App::$test_path?>/">TASKS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
