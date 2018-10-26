@@ -50,7 +50,7 @@ $tasks = $data['itemsPerPage'];
                 </div>
 
                 <?php if($tasks[$i]->img_path) : ?>
-                    <img class="img-size px-3 py-2" width="320" height="240" src="<?= $tasks[$i]->img_path ?>">
+                    <img class="img-size px-3 py-2" width="320" height="240" src="<?= App::$test_path.$tasks[$i]->img_path ?>">
                 <?php else : ?>
                     <p class="px-3 font-weight-light">No images</p>
                 <?php endif; ?>

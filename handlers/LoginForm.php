@@ -8,6 +8,7 @@
 namespace handlers;
 
 use helpers\SQLHandler;
+use lib\App;
 use lib\Form;
 
 class LoginForm extends Form
@@ -41,7 +42,7 @@ class LoginForm extends Form
         if($user) {
             setcookie('loginUser', serialize($user), time() + 3600);
             $this->error = 'Success';
-            header('Location: /test_task/page/index');
+            header('Location:'.App::$test_path.'/page/index');
         } else {
             $this->error = 'Incorrect username or password';
         }
