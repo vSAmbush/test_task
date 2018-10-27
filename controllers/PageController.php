@@ -12,6 +12,7 @@ use handlers\AdminForm;
 use handlers\LoginForm;
 use handlers\RegisterForm;
 use helpers\Pagination;
+use lib\App;
 use lib\Controller;
 use helpers\TaskGroup;
 
@@ -120,5 +121,16 @@ class PageController extends Controller
             }
             $this->data['error'] = $loginForm->error;
         }
+    }
+
+    /**
+     * Log out user
+     */
+    public function actionLogout() {
+        //REMEMBER!!! To unset cookies you must to specify path, which you set when you had set the cookies
+        setcookie('loginUser', '', time() - 3600, '/');
+        unset($_COOKIE['loginUser']);
+        App::$user = null;
+        header('Location:'.App::$test_path.'/page/index');
     }
 }

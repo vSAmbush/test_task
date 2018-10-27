@@ -34,8 +34,6 @@ class App
         //This variable need to different localhost and remote server
         self::$test_path = (preg_match('/\btest_task\b/', $uri)) ? '/test_task' : '';
 
-        self::logout();
-
         $controller_name = '\controllers\\'.self::$router->getController();
         $controller_action = self::$router->getMethodPrefix().self::$router->getAction();
 
@@ -70,17 +68,5 @@ class App
     public static function getSqlHandler()
     {
         return self::$sqlHandler;
-    }
-
-    /**
-     * Log out user
-     */
-    private static function logout() {
-        if(isset($_GET['action'])) {
-            unset($_COOKIE['loginUser']);
-            setcookie('loginUser', '', time() - 3600);
-            self::$user = null;
-            header('Location:'.self::$test_path.'/page/index');
-        }
     }
 }

@@ -40,7 +40,7 @@ class LoginForm extends Form
         $user = SQLHandler::getUserByUsername($this->username, $this->password);
 
         if($user) {
-            setcookie('loginUser', serialize($user), time() + 3600);
+            setcookie('loginUser', serialize($user), time() + 3600, '/');
             $this->error = 'Success';
             header('Location:'.App::$test_path.'/page/index');
         } else {

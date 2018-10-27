@@ -45,7 +45,7 @@ use \lib\Config;
                             <?php if(!App::$user): ?>
                                 <a class="nav-link" href="<?= App::$test_path?>/page/login">Login</a>
                             <?php else: ?>
-                                <a class="nav-link" href="?action=out">Logout (<?= App::$user->getUsername() ?>)</a>
+                                <a class="nav-link" href="<?= App::$test_path?>/page/logout">Logout (<?= App::$user->getUsername() ?>)</a>
                             <?php endif; ?>
                         </li>
                     </ul>
